@@ -1,0 +1,273 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from GameExchangeServiceImplService WSDL service -->
+
+  <service name="GameExchangeServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://server.gameco.com"/>
+      <parameter name="wsdlServiceElement" value="GameExchangeServiceImplService"/>
+      <parameter name="schemaQualified" value="http://server.gameco.com,http://xml.apache.org/xml-soap,http://network.gameco.com"/>
+      <parameter name="wsdlServicePort" value="GameExchangeServiceImpl"/>
+      <parameter name="className" value="com.gameco.server.GameExchangeServiceImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="GameExchangeServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="leave" qname="operNS:leave" xmlns:operNS="http://server.gameco.com" soapAction="" >
+      </operation>
+      <operation name="getUsers" qname="operNS:getUsers" xmlns:operNS="http://server.gameco.com" returnQName="retNS:getUsersReturn" xmlns:retNS="http://server.gameco.com" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://server.gameco.com" returnItemQName="tns:item" xmlns:tns="http://server.gameco.com" soapAction="" >
+      </operation>
+      <operation name="logout" qname="operNS:logout" xmlns:operNS="http://server.gameco.com" soapAction="" >
+      </operation>
+      <operation name="cancel" qname="operNS:cancel" xmlns:operNS="http://server.gameco.com" soapAction="" >
+      </operation>
+      <operation name="login" qname="operNS:login" xmlns:operNS="http://server.gameco.com" returnQName="retNS:loginReturn" xmlns:retNS="http://server.gameco.com" returnType="rtns:anyType" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://server.gameco.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:passwordhash" xmlns:pns="http://server.gameco.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="CredentialException" qname="fns:fault" xmlns:fns="http://server.gameco.com" class="com.gameco.network.CredentialException" type="tns:CredentialException" xmlns:tns="http://network.gameco.com"/>
+      </operation>
+      <operation name="getGames" qname="operNS:getGames" xmlns:operNS="http://server.gameco.com" returnQName="retNS:getGamesReturn" xmlns:retNS="http://server.gameco.com" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://server.gameco.com" returnItemQName="tns:item" xmlns:tns="http://server.gameco.com" soapAction="" >
+      </operation>
+      <operation name="getAvaibleGames" qname="operNS:getAvaibleGames" xmlns:operNS="http://server.gameco.com" returnQName="retNS:getAvaibleGamesReturn" xmlns:retNS="http://server.gameco.com" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://server.gameco.com" returnItemQName="tns:item" xmlns:tns="http://server.gameco.com" soapAction="" >
+      </operation>
+      <operation name="invite" qname="operNS:invite" xmlns:operNS="http://server.gameco.com" soapAction="" >
+        <parameter qname="pns:game" xmlns:pns="http://server.gameco.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:players" xmlns:pns="http://server.gameco.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setMove" qname="operNS:setMove" xmlns:operNS="http://server.gameco.com" soapAction="" >
+        <parameter qname="pns:move" xmlns:pns="http://server.gameco.com" type="tns:anyType" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setMoves" qname="operNS:setMoves" xmlns:operNS="http://server.gameco.com" soapAction="" >
+        <parameter qname="pns:moves" xmlns:pns="http://server.gameco.com" type="tns:GameHistory" xmlns:tns="http://network.gameco.com"/>
+      </operation>
+      <operation name="join" qname="operNS:join" xmlns:operNS="http://server.gameco.com" soapAction="" >
+        <parameter qname="pns:gameID" xmlns:pns="http://server.gameco.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="accept" qname="operNS:accept" xmlns:operNS="http://server.gameco.com" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="cancel logout leave getUsers invite join login getAvaibleGames getGames setMove setMoves accept"/>
+
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>invite"
+        type="java:com.gameco.server.Invite"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>join"
+        type="java:com.gameco.server.Join"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>setMoveResponse"
+        type="java:com.gameco.server.SetMoveResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>leaveResponse"
+        type="java:com.gameco.server.LeaveResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>cancelResponse"
+        type="java:com.gameco.server.CancelResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>logoutResponse"
+        type="java:com.gameco.server.LogoutResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>getAvaibleGamesResponse"
+        type="java:com.gameco.server.GetAvaibleGamesResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>loginResponse"
+        type="java:com.gameco.server.LoginResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>accept"
+        type="java:com.gameco.server.Accept"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>leave"
+        type="java:com.gameco.server.Leave"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>logout"
+        type="java:com.gameco.server.Logout"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>getAvaibleGames"
+        type="java:com.gameco.server.GetAvaibleGames"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>acceptResponse"
+        type="java:com.gameco.server.AcceptResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>login"
+        type="java:com.gameco.server.Login"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>getGamesResponse"
+        type="java:com.gameco.server.GetGamesResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>inviteResponse"
+        type="java:com.gameco.server.InviteResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>getUsers"
+        type="java:com.gameco.server.GetUsers"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>joinResponse"
+        type="java:com.gameco.server.JoinResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>cancel"
+        type="java:com.gameco.server.Cancel"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>setMove"
+        type="java:com.gameco.server.SetMove"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>setMovesResponse"
+        type="java:com.gameco.server.SetMovesResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>getUsersResponse"
+        type="java:com.gameco.server.GetUsersResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>getGames"
+        type="java:com.gameco.server.GetGames"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://network.gameco.com"
+        qname="ns:CredentialException"
+        type="java:com.gameco.network.CredentialException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://server.gameco.com"
+        qname="ns:>setMoves"
+        type="java:com.gameco.server.SetMoves"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://network.gameco.com"
+        qname="ns:GameHistory"
+        type="java:com.gameco.network.GameHistory"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

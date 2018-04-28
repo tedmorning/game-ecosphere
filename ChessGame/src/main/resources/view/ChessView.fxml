@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="com.gameco.games.chess.view.ChessController"
+			type="AnchorPane">
+	<GridPane fx:id="#board"
+			AnchorPane.topAnchor="0.0"
+			AnchorPane.bottomAnchor="0.0"
+			alignment="CENTER"/>
+</fx:root>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="com.gameco.client.controller.WatchTabController">
+	<ListView id="games"/>
+	<VBox id="info"/>
+</SplitPane>
+

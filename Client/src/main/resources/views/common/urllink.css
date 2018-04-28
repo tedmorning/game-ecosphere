@@ -1,0 +1,12 @@
+#link {
+	-fx-text-fill: #000080;
+	-fx-underline: true;
+}
+
+#link:hover {
+	-fx-text-fill: #0000F0;
+}
+
+#link:active {
+	-fx-text-fill: #0000FF;
+}

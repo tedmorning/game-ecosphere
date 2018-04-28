@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/"
+			fx:controller="com.gameco.client.controller.MenuController">
+	<stylesheets>
+		<URL value="@common/urllink.css"/>
+	</stylesheets>
+	<top>
+		<HBox alignment="TOP_RIGHT"
+				spacing="10">
+			<Label fx:id="user"/>
+			<Label id="link"
+					text="logout"
+					onMouseClicked="#doLogout"/>
+		</HBox>
+	</top>
+	<center>
+		<AnchorPane>
+			<TabPane id="tab_menu"
+					AnchorPane.topAnchor="0.0"
+					AnchorPane.bottomAnchor="0.0"
+					AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0">
+				<Tab id="playtab"
+						text="Play"
+						closable="false">
+					<fx:include fx:id="playTabContent"
+								source="/views/PlayTabView.fxml"/>
+				</Tab>
+				<!-- <Tab id="watchtab"
+						text="Watch"
+						closable="false">
+					<fx:include fx:id="watchTab"
+								source="/views/WatchTabView.fxml"/>
+				</Tab> -->
+			</TabPane>
+		</AnchorPane>
+	</center>
+</BorderPane>
+

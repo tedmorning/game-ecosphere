@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<SplitPane xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="com.gameco.client.controller.PlayTabController">
+	<ListView fx:id="players"/>
+	<VBox fx:id="info">
+		<VBox alignment="CENTER">
+			<ImageView fx:id="gamelogo" x="200" y="200"/>
+			<Label id="enemies" text="Enemies" alignment="CENTER" />
+			<HBox style="-fx-background-color: white; -fx-border-style: solid">
+				<Label text=" X  " fx:id="removeB"/>
+				<Label fx:id="enemy" text="player1"/>
+			</HBox>
+			<Button fx:id="invite" text="Invite" onAction="#invite" />
+		</VBox>
+	</VBox>
+</SplitPane>
+

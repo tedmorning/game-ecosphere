@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.canvas.Canvas?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="com.gameco.games.chess.view.ChessController">
+	<stylesheets>
+		<URL value="@common/boardSquare.css"/>
+	</stylesheets>
+	<GridPane id="#board"
+			AnchorPane.topAnchor="0.0"
+			AnchorPane.bottomAnchor="0.0"
+			alignment="CENTER">
+		<Label id="topCharLabelA" text="a" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelB" text="b" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelC" text="c" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelD" text="d" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelE" text="e" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelF" text="f" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelG" text="g" GridPane.columnIndex="7" GridPane.rowIndex="0"/>
+		<Label id="topCharLabelH" text="h" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
+		<Label id="bottomCharLabelA" text="a" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelB" text="b" GridPane.columnIndex="2" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelC" text="c" GridPane.columnIndex="3" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelD" text="d" GridPane.columnIndex="4" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelE" text="e" GridPane.columnIndex="5" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelF" text="f" GridPane.columnIndex="6" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelG" text="g" GridPane.columnIndex="7" GridPane.rowIndex="9"/>
+		<Label id="bottomCharLabelH" text="h" GridPane.columnIndex="8" GridPane.rowIndex="9"/>
+		<Label id="leftNumber1" text="1" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+		<Label id="leftNumber2" text="2" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+		<Label id="leftNumber3" text="3" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+		<Label id="leftNumber4" text="4" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+		<Label id="leftNumber5" text="5" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+		<Label id="leftNumber6" text="6" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+		<Label id="leftNumber7" text="7" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+		<Label id="leftNumber8" text="8" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+		<Label id="rightNumber1" text="1" GridPane.columnIndex="9" GridPane.rowIndex="1"/>
+		<Label id="rightNumber2" text="2" GridPane.columnIndex="9" GridPane.rowIndex="2"/>
+		<Label id="rightNumber3" text="3" GridPane.columnIndex="9" GridPane.rowIndex="3"/>
+		<Label id="rightNumber4" text="4" GridPane.columnIndex="9" GridPane.rowIndex="4"/>
+		<Label id="rightNumber5" text="5" GridPane.columnIndex="9" GridPane.rowIndex="5"/>
+		<Label id="rightNumber6" text="6" GridPane.columnIndex="9" GridPane.rowIndex="6"/>
+		<Label id="rightNumber7" text="7" GridPane.columnIndex="9" GridPane.rowIndex="7"/>
+		<Label id="rightNumber8" text="8" GridPane.columnIndex="9" GridPane.rowIndex="8"/>
+		<!-- Board -->
+		<Canvas id="a1" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+		<Canvas id="b1" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+		<Canvas id="c1" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+		<Canvas id="d1" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+		<Canvas id="e1" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+		<Canvas id="f1" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+		<Canvas id="g1" GridPane.columnIndex="7" GridPane.rowIndex="1"/>
+		<Canvas id="h1" GridPane.columnIndex="8" GridPane.rowIndex="1"/>
+		<Canvas id="a2" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+		<Canvas id="b2" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+		<Canvas id="c2" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+		<Canvas id="d2" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+		<Canvas id="e2" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+		<Canvas id="f2" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+		<Canvas id="g2" GridPane.columnIndex="7" GridPane.rowIndex="2"/>
+		<Canvas id="h2" GridPane.columnIndex="8" GridPane.rowIndex="2"/>
+		<Canvas id="a3" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+		<Canvas id="b3" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+		<Canvas id="c3" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+		<Canvas id="d3" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+		<Canvas id="e3" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+		<Canvas id="f3" GridPane.columnIndex="6" GridPane.rowIndex="3"/>
+		<Canvas id="g3" GridPane.columnIndex="7" GridPane.rowIndex="3"/>
+		<Canvas id="h3" GridPane.columnIndex="8" GridPane.rowIndex="3"/>
+		<Canvas id="a4" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+		<Canvas id="b4" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+		<Canvas id="c4" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+		<Canvas id="d4" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+		<Canvas id="e4" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+		<Canvas id="f4" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
+		<Canvas id="g4" GridPane.columnIndex="7" GridPane.rowIndex="4"/>
+		<Canvas id="h4" GridPane.columnIndex="8" GridPane.rowIndex="4"/>
+		<Canvas id="a5" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+		<Canvas id="b5" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+		<Canvas id="c5" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+		<Canvas id="d5" GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+		<Canvas id="e5" GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+		<Canvas id="f5" GridPane.columnIndex="6" GridPane.rowIndex="5"/>
+		<Canvas id="g5" GridPane.columnIndex="7" GridPane.rowIndex="5"/>
+		<Canvas id="h5" GridPane.columnIndex="8" GridPane.rowIndex="5"/>
+		<Canvas id="a6" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+		<Canvas id="b6" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+		<Canvas id="c6" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+		<Canvas id="d6" GridPane.columnIndex="4" GridPane.rowIndex="6"/>
+		<Canvas id="e6" GridPane.columnIndex="5" GridPane.rowIndex="6"/>
+		<Canvas id="f6" GridPane.columnIndex="6" GridPane.rowIndex="6"/>
+		<Canvas id="g6" GridPane.columnIndex="7" GridPane.rowIndex="6"/>
+		<Canvas id="h6" GridPane.columnIndex="8" GridPane.rowIndex="6"/>
+		<Canvas id="a7" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+		<Canvas id="b7" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+		<Canvas id="c7" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+		<Canvas id="d7" GridPane.columnIndex="4" GridPane.rowIndex="7"/>
+		<Canvas id="e7" GridPane.columnIndex="5" GridPane.rowIndex="7"/>
+		<Canvas id="f7" GridPane.columnIndex="6" GridPane.rowIndex="7"/>
+		<Canvas id="g7" GridPane.columnIndex="7" GridPane.rowIndex="7"/>
+		<Canvas id="h7" GridPane.columnIndex="8" GridPane.rowIndex="7"/>
+		<Canvas id="a8" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+		<Canvas id="b8" GridPane.columnIndex="2" GridPane.rowIndex="8"/>
+		<Canvas id="c8" GridPane.columnIndex="3" GridPane.rowIndex="8"/>
+		<Canvas id="d8" GridPane.columnIndex="4" GridPane.rowIndex="8"/>
+		<Canvas id="e8" GridPane.columnIndex="5" GridPane.rowIndex="8"/>
+		<Canvas id="f8" GridPane.columnIndex="6" GridPane.rowIndex="8"/>
+		<Canvas id="g8" GridPane.columnIndex="7" GridPane.rowIndex="8"/>
+		<Canvas id="h8" GridPane.columnIndex="8" GridPane.rowIndex="8"/>
+	</GridPane>
+</AnchorPane>
+

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GameExchangeService" targetNamespace="http://server.gameco.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://server.gameco.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://server.gameco.com/" schemaLocation="gameexchangeservice_schema2.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="setMoves">
+    <wsdl:part name="parameters" element="tns:setMoves">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setMove">
+    <wsdl:part name="parameters" element="tns:setMove">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="join">
+    <wsdl:part name="parameters" element="tns:join">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="joinResponse">
+    <wsdl:part name="parameters" element="tns:joinResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setMovesResponse">
+    <wsdl:part name="parameters" element="tns:setMovesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsers">
+    <wsdl:part name="parameters" element="tns:getUsers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CredentialException">
+    <wsdl:part name="CredentialException" element="tns:CredentialException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="logout">
+    <wsdl:part name="parameters" element="tns:logout">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="login">
+    <wsdl:part name="parameters" element="tns:login">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAvaibleGamesResponse">
+    <wsdl:part name="parameters" element="tns:getAvaibleGamesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setMoveResponse">
+    <wsdl:part name="parameters" element="tns:setMoveResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="logoutResponse">
+    <wsdl:part name="parameters" element="tns:logoutResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelResponse">
+    <wsdl:part name="parameters" element="tns:cancelResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancel">
+    <wsdl:part name="parameters" element="tns:cancel">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsersResponse">
+    <wsdl:part name="parameters" element="tns:getUsersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="acceptResponse">
+    <wsdl:part name="parameters" element="tns:acceptResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGames">
+    <wsdl:part name="parameters" element="tns:getGames">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGamesResponse">
+    <wsdl:part name="parameters" element="tns:getGamesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="invite">
+    <wsdl:part name="parameters" element="tns:invite">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addCallback">
+    <wsdl:part name="parameters" element="tns:addCallback">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="accept">
+    <wsdl:part name="parameters" element="tns:accept">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addCallbackResponse">
+    <wsdl:part name="parameters" element="tns:addCallbackResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAvaibleGames">
+    <wsdl:part name="parameters" element="tns:getAvaibleGames">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inviteResponse">
+    <wsdl:part name="parameters" element="tns:inviteResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="parameters" element="tns:loginResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IGameExchangeService">
+    <wsdl:operation name="setMoves">
+      <wsdl:input name="setMoves" message="tns:setMoves">
+    </wsdl:input>
+      <wsdl:output name="setMovesResponse" message="tns:setMovesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMove">
+      <wsdl:input name="setMove" message="tns:setMove">
+    </wsdl:input>
+      <wsdl:output name="setMoveResponse" message="tns:setMoveResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <wsdl:input name="getGames" message="tns:getGames">
+    </wsdl:input>
+      <wsdl:output name="getGamesResponse" message="tns:getGamesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invite">
+      <wsdl:input name="invite" message="tns:invite">
+    </wsdl:input>
+      <wsdl:output name="inviteResponse" message="tns:inviteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="join">
+      <wsdl:input name="join" message="tns:join">
+    </wsdl:input>
+      <wsdl:output name="joinResponse" message="tns:joinResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input name="getUsers" message="tns:getUsers">
+    </wsdl:input>
+      <wsdl:output name="getUsersResponse" message="tns:getUsersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <wsdl:input name="logout" message="tns:logout">
+    </wsdl:input>
+      <wsdl:output name="logoutResponse" message="tns:logoutResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCallback">
+      <wsdl:input name="addCallback" message="tns:addCallback">
+    </wsdl:input>
+      <wsdl:output name="addCallbackResponse" message="tns:addCallbackResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accept">
+      <wsdl:input name="accept" message="tns:accept">
+    </wsdl:input>
+      <wsdl:output name="acceptResponse" message="tns:acceptResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvaibleGames">
+      <wsdl:input name="getAvaibleGames" message="tns:getAvaibleGames">
+    </wsdl:input>
+      <wsdl:output name="getAvaibleGamesResponse" message="tns:getAvaibleGamesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input name="login" message="tns:login">
+    </wsdl:input>
+      <wsdl:output name="loginResponse" message="tns:loginResponse">
+    </wsdl:output>
+      <wsdl:fault name="CredentialException" message="tns:CredentialException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancel">
+      <wsdl:input name="cancel" message="tns:cancel">
+    </wsdl:input>
+      <wsdl:output name="cancelResponse" message="tns:cancelResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GameExchangeServiceSoapBinding" type="tns:IGameExchangeService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setMoves">
+      <soap12:operation soapAction="urn:SetMoves" style="document"/>
+      <wsdl:input name="setMoves">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setMovesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMove">
+      <soap12:operation soapAction="urn:SetMove" style="document"/>
+      <wsdl:input name="setMove">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setMoveResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <soap12:operation soapAction="urn:GetGames" style="document"/>
+      <wsdl:input name="getGames">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getGamesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invite">
+      <soap12:operation soapAction="urn:Invite" style="document"/>
+      <wsdl:input name="invite">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inviteResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="join">
+      <soap12:operation soapAction="urn:Join" style="document"/>
+      <wsdl:input name="join">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="joinResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap12:operation soapAction="urn:GetUsers" style="document"/>
+      <wsdl:input name="getUsers">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUsersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <soap12:operation soapAction="urn:Logout" style="document"/>
+      <wsdl:input name="logout">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="logoutResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCallback">
+      <soap12:operation soapAction="urn:AddCallback" style="document"/>
+      <wsdl:input name="addCallback">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addCallbackResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accept">
+      <soap12:operation soapAction="urn:Accept" style="document"/>
+      <wsdl:input name="accept">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="acceptResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvaibleGames">
+      <soap12:operation soapAction="urn:GetAvaibleGames" style="document"/>
+      <wsdl:input name="getAvaibleGames">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAvaibleGamesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="urn:Login" style="document"/>
+      <wsdl:input name="login">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CredentialException">
+        <soap12:fault name="CredentialException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancel">
+      <soap12:operation soapAction="urn:Cancel" style="document"/>
+      <wsdl:input name="cancel">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GameExchangeService">
+    <wsdl:port name="GameExchangeServicePort" binding="tns:GameExchangeServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/GameExchangeServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

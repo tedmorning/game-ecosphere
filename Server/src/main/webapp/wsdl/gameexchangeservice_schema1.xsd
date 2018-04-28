@@ -1,0 +1,40 @@
+<xs:schema xmlns:tns="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/2006/05/addressing/wsdl" version="1.0">
+
+  <xs:element name="Anonymous">
+    <xs:simpleType>
+      <xs:restriction base="tns:AnonymousType"/>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="InterfaceName" type="tns:AttributedQNameType"/>
+
+  <xs:element name="ServiceName" type="tns:ServiceNameType"/>
+
+  <xs:element name="UsingAddressing" type="tns:UsingAddressing"/>
+
+  <xs:simpleType name="AttributedQNameType">
+    <xs:restriction base="xs:QName"/>
+  </xs:simpleType>
+
+  <xs:complexType name="UsingAddressing">
+    <xs:sequence/>
+    <xs:anyAttribute namespace="##other" processContents="skip"/>
+  </xs:complexType>
+
+  <xs:complexType name="ServiceNameType">
+    <xs:simpleContent>
+      <xs:extension base="xs:QName">
+        <xs:attribute name="EndpointName" type="xs:NCName"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="AnonymousType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="optional"/>
+      <xs:enumeration value="required"/>
+      <xs:enumeration value="prohibited"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

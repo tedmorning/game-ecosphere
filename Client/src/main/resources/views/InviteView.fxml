@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+		spacing="10"
+		fx:controller="com.gameco.client.controller.InviteController">
+	<Label id="title"
+			text="Enemies"
+			style="-fx-font-size: 240%"
+			alignment="CENTER"/>
+	<HBox id="enemies" alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-font-weight: bolder;">
+		<Label fx:id="first" alignment="CENTER_LEFT" style="-fx-font-size: 140%"/>
+		<Label text="vs." alignment="CENTER" style="-fx-font-size: 190%; -fx-text-color: red; -fx-font-weight: bold; -fx-font-style:italic;"/>
+		<Label fx:id="second" alignment="CENTER_RIGHT" style="-fx-font-size: 140%"/>
+	</HBox>
+	<HBox fx:id="decision" alignment="CENTER" spacing="20">
+		<Button id="accept" text="Accept" onAction="#doAccept"/>
+		<Button id="decline" text="Decline" onAction="#doDecline"/>
+	</HBox>
+	<Label fx:id="status" />
+</VBox>
+
